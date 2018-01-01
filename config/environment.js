@@ -29,6 +29,9 @@ module.exports = function(environment) {
       projectId: "leffat-e132d",
       storageBucket: "leffat-e132d.appspot.com",
       messagingSenderId: "844443458945"
+    },
+    torii: {
+      sessionServiceName: 'session'
     }
   };
 
