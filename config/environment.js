@@ -21,6 +21,14 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+    firebase: {
+      apiKey: "AIzaSyAvnl0fVm7lGRlEpXvqAsGSReUCVQeYnUs",
+      authDomain: "leffat-e132d.firebaseapp.com",
+      databaseURL: "https://leffat-e132d.firebaseio.com",
+      projectId: "leffat-e132d",
+      storageBucket: "leffat-e132d.appspot.com",
+      messagingSenderId: "844443458945"
     }
   };
 
