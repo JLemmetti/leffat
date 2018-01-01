@@ -5,31 +5,31 @@
 
 <ul class="movie-list">
 {{#each model as |movie|}}
-	{{movie-item movie=movie}}
+    {{movie-item movie=movie}}
 {{/each}}
 </ul>
 
 <hr>
 
 <form {{action 'saveMovie' article on='submit'}}>
-	<label>Leffa{{input type="text" value=movie}}</label>
-	<label>Linkki{{input type="text" value=link}}</label>
-	<input type="submit" value="Tallenna">
+    <label>Leffa{{input type="text" value=movie}}</label>
+    <label>Linkki{{input type="text" value=link}}</label>
+    <input type="submit" value="Tallenna">
 </form>
 
 <hr>
 
 {{#if session.isAuthenticated}}
-	<button {{action 'signOut'}} class="log-out">Kirjaudu ulos</button>
+    <button {{action 'signOut'}} class="log-out">Kirjaudu ulos</button>
 {{else}}
-	<form class="login-form" {{action 'signIn' 'password' on='submit'}}>
+    <form class="login-form" {{action 'signIn' 'password' on='submit'}}>
 
-		<h3>Kirjautuminen</h3>
+        <h3>Kirjautuminen</h3>
 
-		<label>Sähköposti: {{input type='email' value=email}}</label>
-		<label>Salasana: {{input type='password' value=password}}</label>
-		<input type="submit" value="Kirjaudu">
-	</form>
+        <label>Sähköposti: {{input type='email' value=email}}</label>
+        <label>Salasana: {{input type='password' value=password}}</label>
+        <input type="submit" value="Kirjaudu">
+    </form>
 {{/if}}
 
 {{outlet}}
