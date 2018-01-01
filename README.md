@@ -1,7 +1,6 @@
-# leffat
+# Leffat
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+App for keeping track of movies you have watched.
 
 ## Prerequisites
 
