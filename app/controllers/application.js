@@ -45,6 +45,10 @@ export default Controller.extend({
         },
         cancelEdit (movie) {
             movie.set('editing', false);
+        },
+        deleteMovie (movie) {
+            movie.deleteRecord();
+            movie.save();
         }
     }
 });
