@@ -3,6 +3,9 @@
     <h2><a href="{{movie.link}}" target="_blank">{{movie.title}}</a></h2>
     <p>Nähty: {{movie.watchDate}}</p>
     <pre>{{movie.notes}}</pre>
+
+    {{#if session.isAuthenticated}}
     <button {{action 'editMovie' movie}}>Muokkaa</button>
     <button {{action 'deleteMovie' movie}}>Poista</button>
+    {{/if}}
 </li>
