@@ -1,9 +1,19 @@
 
-<form {{action 'saveMovie' movie on='submit'}}>
-    <label>Leffa{{input type="text" value=title}}</label>
-    <label>Linkki{{input type="text" value=link}}</label>
-    <label>Huomiot{{textarea value=notes}}</label>
+<form {{action 'saveMovie' movie on='submit'}} class="edit-movie-item clearfix">
+
+    {{#if cancelEdit}}
+        <h2>Muokkaa leffaa</h2>
+    {{else}}
+        <h2>Lisää uusi leffa</h2>
+    {{/if}}
+
+    <div class="wrapper clearfix">
+        <label>Leffa{{input type="text" value=title}}</label>
+        <label>Linkki{{input type="text" value=link}}</label>
+        <label>Huomiot{{textarea value=notes}}</label>
+    </div>
     <input type="submit" value="Tallenna">
+
     {{#if cancelEdit}}
         <button {{action 'cancelEdit' movie}}>Peruuta</button>
     {{/if}}

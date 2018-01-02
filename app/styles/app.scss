@@ -1,0 +1,122 @@
+
+* {
+  box-sizing: border-box;
+}
+
+.clearfix {
+
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+body {
+  background-color: #eee;
+  font-family: 'Verdana';
+  margin: 0;
+}
+
+h1, h2, h3, h4 {
+  font-weight: normal;
+  margin: 0;
+}
+
+.main-header {
+  background-color: #ddd;
+
+  h1 {
+    float: left;
+    padding: 20px;
+  }
+
+  .log-out {
+    float: right;
+    margin: 10px 15px;
+  }
+}
+
+.movie-list {
+  list-style-type: none;
+  padding: 0;
+  width: 80%;
+  margin: 40px auto;
+}
+
+.movie-item {
+  background-color: #ddd;
+  padding: 10px 15px;
+  margin: 15px 0;
+  border-radius: 4px;
+
+  h2 {
+    font-size: 28px;
+
+    a {
+      color: #444;
+      text-decoration: none;
+
+      &:hover {
+        color: #222;
+      }
+    }
+  }
+
+  pre {
+    font-family: 'Verdana';
+  }
+}
+
+.edit-movie-item {
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, .2);
+
+  h2 {
+    margin: 15px 10px;
+  }
+
+  .wrapper {
+    clear: both;
+
+    label {
+      float: left;
+      margin: 0 10px;
+
+      input,
+      textarea {
+        display: block;
+        clear: both;
+      }
+    }
+  }
+
+  button,
+  input[type='submit'] {
+    float: right;
+    margin-right: 15px;
+  }
+}
+
+input[type='text'],
+input[type='password'],
+textarea {
+  font-size: 16px;
+  padding: 4px;
+  border: 2px solid rgba(0, 0, 0, .3);
+  border-radius: 3px;
+}
+
+button,
+input[type='submit'] {
+  background-color: #333;
+  color: #eee;
+  font-size: 15px;
+  padding: 5px 10px;
+  border: 2px solid rgba(255, 255, 255, .3);
+  border-radius: 3px;
+}
