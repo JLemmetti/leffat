@@ -1,0 +1,10 @@
+
+<form {{action 'saveMovie' movie on='submit'}}>
+    <label>Leffa{{input type="text" value=title}}</label>
+    <label>Linkki{{input type="text" value=link}}</label>
+    <label>Huomiot{{textarea value=notes}}</label>
+    <input type="submit" value="Tallenna">
+    {{#if cancelEdit}}
+        <button {{action 'cancelEdit' movie}}>Peruuta</button>
+    {{/if}}
+</form>

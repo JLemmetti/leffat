@@ -1,7 +1,8 @@
 import Controller from '@ember/controller';
+import EmberObject, { computed } from '@ember/object';
 
 export default Controller.extend({
-    movie: undefined,
+    title: undefined,
     link: undefined,
     email: undefined,
     password: undefined,
@@ -20,14 +21,30 @@ export default Controller.extend({
         signOut: function () {
             this.get('session').close();
         },
-        saveMovie () {
-            let movie = this.store.createRecord('movie', {
-                title: this.movie,
-                link: this.link,
-                notes: this.notes
-            })
+        saveMovie (movie) {
 
-            movie.save();
+            if (movie) {
+                movie.set('editing', false);
+                movie.save();
+            } else {
+               let newMovie = this.store.createRecord('movie', {
+                   title: this.title,
+                   link: this.link,
+                   notes: this.notes,
+                });
+
+               newMovie.save();
+
+               this.set('title', '');
+               this.set('link', '');
+               this.set('notes', '');
+            }
+        },
+        editMovie (movie) {
+            movie.set('editing', true);
+        },
+        cancelEdit (movie) {
+            movie.set('editing', false);
         }
     }
 });

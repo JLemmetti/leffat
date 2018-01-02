@@ -5,18 +5,35 @@
 
 <ul class="movie-list">
 {{#each model as |movie|}}
-    {{movie-item movie=movie}}
+
+    {{#if movie.editing}}
+        {{edit-movie-item
+            movie=movie
+            title=movie.title
+            link=movie.link
+            notes=movie.notes
+            saveMovie='saveMovie'
+            cancelEdit='cancelEdit'
+        }}
+    {{else}}
+        {{#unless movie.isNew}}
+        {{movie-item
+            movie=movie
+            editMovie='editMovie'
+        }}
+        {{/unless}}
+    {{/if}}
 {{/each}}
 </ul>
 
 <hr>
 
-<form {{action 'saveMovie' article on='submit'}}>
-    <label>Leffa{{input type="text" value=movie}}</label>
-    <label>Linkki{{input type="text" value=link}}</label>
-    <label>Huomiot{{textarea value=notes}}</label>
-    <input type="submit" value="Tallenna">
-</form>
+{{edit-movie-item
+    title=title
+    link=link
+    notes=notes
+    saveMovie='saveMovie'
+}}
 
 <hr>
 
