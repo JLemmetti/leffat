@@ -23,7 +23,8 @@ export default Controller.extend({
         saveMovie () {
             let movie = this.store.createRecord('movie', {
                 title: this.movie,
-                link: this.link
+                link: this.link,
+                notes: this.notes
             })
 
             movie.save();
