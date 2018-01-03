@@ -85,7 +85,7 @@ h1, h2, h3, h4 {
 
     label {
       float: left;
-      margin: 0 10px;
+      clear: left;
 
       input,
       textarea {
@@ -95,7 +95,15 @@ h1, h2, h3, h4 {
     }
   }
 
-  button,
+  .calendar-button {
+    display: block;
+  }
+
+  .calendar {
+    width: 260px;
+    margin: 10px 0 10px;
+  }
+
   input[type='submit'] {
     float: right;
     margin-right: 15px;

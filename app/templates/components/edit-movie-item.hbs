@@ -12,6 +12,20 @@
         <label>Linkki{{input type="text" value=link}}</label>
         <label>Huomiot{{textarea value=notes}}</label>
     </div>
+
+    <label>Nähty {{watchDate}}
+
+    </label>
+
+    <button {{action 'toggleCalendar'}} class="calendar-button">Kalenteri</button>
+    <div class="calendar">
+        {{#if showCalendar}}
+            {{pikaday-inputless
+                onSelection=(action 'setWatchDate')
+            }}
+        {{/if}}
+    </div>
+
     <input type="submit" value="Tallenna">
 
     {{#if cancelEdit}}

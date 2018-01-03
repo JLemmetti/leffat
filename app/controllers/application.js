@@ -4,6 +4,10 @@ import EmberObject, { computed } from '@ember/object';
 export default Controller.extend({
     title: undefined,
     link: undefined,
+    notes: undefined,
+    watchDate: undefined,
+    storedWatchDate: undefined,
+
     email: undefined,
     password: undefined,
 
@@ -25,12 +29,14 @@ export default Controller.extend({
 
             if (movie) {
                 movie.set('editing', false);
+                movie.set('watchDate', this.storedWatchDate);
                 movie.save();
             } else {
                let newMovie = this.store.createRecord('movie', {
                    title: this.title,
                    link: this.link,
                    notes: this.notes,
+                   watchDate: this.storedWatchDate
                 });
 
                newMovie.save();
@@ -49,6 +55,9 @@ export default Controller.extend({
         deleteMovie (movie) {
             movie.deleteRecord();
             movie.save();
+        },
+        setWatchDate (date) {
+            this.set('storedWatchDate', date);
         }
     }
 });
