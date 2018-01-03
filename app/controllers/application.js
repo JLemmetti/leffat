@@ -17,7 +17,7 @@ export default Controller.extend({
             let email = this.get('email'),
                 password = this.get('password');
 
-            // Sign in the user, fetch the user data and set the user as the model for application route
+            // Sign in the user and fetch the user data
             this.get('session').open('firebase', {provider, email, password}).then(() => {
                 console.log('Login ok');
             });
