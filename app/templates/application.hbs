@@ -16,21 +16,11 @@
     {{/if}}
 </header>
 
-{{#if session.isAuthenticated}}
-    {{edit-movie-item
-        title=title
-        link=link
-        notes=notes
-        watchDate=watchDate
-        setWatchDate='setWatchDate'
-        saveMovie='saveMovie'
-    }}
-{{/if}}
+<p>Lisää uusi leffa <button {{action 'addNewMovie'}} class="log-out">lisää</button></p>
 
-<ul class="movie-list">
-{{#each model as |movie|}}
-
-    {{#if movie.editing}}
+<ul class="new-movie-list movie-list">
+    {{#each newMovies as |movie|}}
+    <li>
         {{edit-movie-item
             movie=movie
             title=movie.title
@@ -41,18 +31,34 @@
             saveMovie='saveMovie'
             cancelEdit='cancelEdit'
         }}
-    {{else}}
-        {{#unless movie.isNew}}
-        {{movie-item
-            session=session
-            movie=movie
-            editMovie='editMovie'
-            deleteMovie='deleteMovie'
-        }}
-        {{/unless}}
-    {{/if}}
+    </li>
+    {{/each}}
+</ul>
 
-{{/each}}
+<ul class="movie-list">
+    {{#each movies as |movie|}}
+    <li class="movie-item">
+        {{#if movie.editing}}
+            {{edit-movie-item
+                movie=movie
+                title=movie.title
+                link=movie.link
+                notes=movie.notes
+                watchDate=movie.watchDate
+                setWatchDate='setWatchDate'
+                saveMovie='saveMovie'
+                cancelEdit='cancelEdit'
+            }}
+        {{else}}
+            {{movie-item
+                session=session
+                movie=movie
+                editMovie='editMovie'
+                deleteMovie='deleteMovie'
+            }}
+        {{/if}}
+    </li>
+    {{/each}}
 </ul>
 
 <footer class="main-footer">

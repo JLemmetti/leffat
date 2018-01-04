@@ -2,14 +2,13 @@ import Controller from '@ember/controller';
 import EmberObject, { computed } from '@ember/object';
 
 export default Controller.extend({
-    title: undefined,
-    link: undefined,
-    notes: undefined,
-    watchDate: undefined,
     storedWatchDate: undefined,
 
     email: undefined,
     password: undefined,
+
+    movies: computed.filterBy('model', 'isNew', false),
+    newMovies: computed.filterBy('model', 'isNew', true),
 
     actions: {
         signIn: function (provider) {
@@ -25,32 +24,23 @@ export default Controller.extend({
         signOut: function () {
             this.get('session').close();
         },
+        addNewMovie () {
+            this.store.createRecord('movie');
+        },
         saveMovie (movie) {
-
-            if (movie) {
-                movie.set('editing', false);
-                movie.set('watchDate', this.storedWatchDate);
-                movie.save();
-            } else {
-               let newMovie = this.store.createRecord('movie', {
-                   title: this.title,
-                   link: this.link,
-                   notes: this.notes,
-                   watchDate: this.storedWatchDate
-                });
-
-               newMovie.save();
-
-               this.set('title', '');
-               this.set('link', '');
-               this.set('notes', '');
-            }
+            movie.set('editing', false);
+            movie.set('watchDate', this.storedWatchDate);
+            movie.save();
         },
         editMovie (movie) {
             movie.set('editing', true);
         },
         cancelEdit (movie) {
-            movie.set('editing', false);
+            if (movie.get('isNew')) {
+                movie.deleteRecord();
+            } else {
+                movie.set('editing', false);
+            }
         },
         deleteMovie (movie) {
             movie.deleteRecord();

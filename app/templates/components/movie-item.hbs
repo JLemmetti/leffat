@@ -1,11 +1,9 @@
 
-<li class="movie-item">
-    <h2><a href="{{movie.link}}" target="_blank">{{movie.title}}</a></h2>
-    <p>Nähty: {{moment-format movie.watchDate 'D.M.YYYY'}}</p>
-    <pre>{{movie.notes}}</pre>
+<h2><a href="{{movie.link}}" target="_blank">{{movie.title}}</a></h2>
+<p>Nähty: {{moment-format movie.watchDate 'D.M.YYYY'}}</p>
+<pre>{{movie.notes}}</pre>
 
-    {{#if session.isAuthenticated}}
-    <button {{action 'editMovie' movie}}>Muokkaa</button>
-    <button {{action 'deleteMovie' movie}}>Poista</button>
-    {{/if}}
-</li>
+{{#if session.isAuthenticated}}
+<button {{action 'editMovie' movie}}>Muokkaa</button>
+<button {{action 'deleteMovie' movie}}>Poista</button>
+{{/if}}
