@@ -2,8 +2,6 @@ import Controller from '@ember/controller';
 import EmberObject, { computed } from '@ember/object';
 
 export default Controller.extend({
-    storedWatchDate: undefined,
-
     email: undefined,
     password: undefined,
 
@@ -29,7 +27,6 @@ export default Controller.extend({
         },
         saveMovie (movie) {
             movie.set('editing', false);
-            movie.set('watchDate', this.storedWatchDate);
             movie.save();
         },
         editMovie (movie) {

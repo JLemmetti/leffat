@@ -21,7 +21,8 @@
     <div class="calendar">
         {{#if showCalendar}}
             {{pikaday-inputless
-                onSelection=(action 'setWatchDate')
+                value=movie.watchDate
+                onSelection=(action (mut movie.watchDate))
             }}
         {{/if}}
     </div>

@@ -8,7 +8,6 @@ export default Component.extend({
             this.toggleProperty('showCalendar');
         },
         setWatchDate (date) {
-            this.sendAction('setWatchDate', date);
             this.set('showCalendar', false);
         },
         saveMovie (movie) {
