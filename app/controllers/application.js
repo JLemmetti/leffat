@@ -42,9 +42,6 @@ export default Controller.extend({
         deleteMovie (movie) {
             movie.deleteRecord();
             movie.save();
-        },
-        setWatchDate (date) {
-            this.set('storedWatchDate', date);
         }
     }
 });
