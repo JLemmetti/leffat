@@ -8,6 +8,9 @@ export default Controller.extend({
     movies: computed.filterBy('model', 'isNew', false),
     newMovies: computed.filterBy('model', 'isNew', true),
 
+    sortProperties: ['watchDate:desc'],
+    sortedMovies: computed.sort('movies', 'sortProperties'),
+
     actions: {
         signIn: function (provider) {
 
