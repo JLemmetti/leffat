@@ -39,6 +39,7 @@ export default Controller.extend({
             if (movie.get('isNew')) {
                 movie.deleteRecord();
             } else {
+                movie.set('editing', false);
                 movie.rollbackAttributes();
             }
         },
