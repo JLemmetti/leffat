@@ -39,7 +39,7 @@
 
 <ul class="movie-list">
     {{#each sortedMovies as |movie|}}
-    <li class="movie-item">
+    <li class="movie-item clearfix">
         {{#if movie.editing}}
             {{edit-movie-item
                 movie=movie

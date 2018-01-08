@@ -92,6 +92,11 @@ h1, h2, h3, h4 {
         display: block;
         clear: both;
       }
+
+      textarea {
+        max-width: 300px;
+        min-width: 300px;
+      }
     }
   }
 
@@ -103,10 +108,20 @@ h1, h2, h3, h4 {
     width: 260px;
     margin: 10px 0 10px;
   }
+}
 
+.info {
+  float: left;
+}
+
+.actions {
+  float: right;
+  width: 100px;
+
+  button,
   input[type='submit'] {
-    float: right;
-    margin-right: 15px;
+    width: 90%;
+    margin: 10px auto;
   }
 }
 
@@ -114,6 +129,7 @@ input[type='email'],
 input[type='text'],
 input[type='password'],
 textarea {
+  width: 300px;
   font-size: 16px;
   padding: 4px;
   border: 2px solid rgba(0, 0, 0, .3);
@@ -128,4 +144,9 @@ input[type='submit'] {
   padding: 5px 10px;
   border: 2px solid rgba(255, 255, 255, .3);
   border-radius: 3px;
+
+  &.delete {
+    background-color: #bf2c2c;
+    color: #eee;
+  }
 }
