@@ -22,6 +22,9 @@
 
     <div class="actions">
         <input type="submit" value="Tallenna">
+        {{#unless movie.isNew}}
+            <button {{action 'deleteMovie' movie}} class="delete">Poista</button>
+        {{/unless}}
         <button {{action 'cancelEdit' movie}}>Peruuta</button>
     </div>
 

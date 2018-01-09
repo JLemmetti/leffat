@@ -13,6 +13,9 @@ export default Component.extend({
         saveMovie (movie) {
             this.sendAction('saveMovie', movie);
         },
+        deleteMovie (movie) {
+            this.sendAction('deleteMovie', movie);
+        },
         cancelEdit (movie) {
             this.sendAction('cancelEdit', movie);
         }
