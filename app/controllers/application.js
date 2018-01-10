@@ -12,17 +12,13 @@ export default Controller.extend({
     sortedMovies: computed.sort('movies', 'sortProperties'),
 
     actions: {
-        signIn: function (provider) {
-
-            let email = this.get('email'),
-                password = this.get('password');
-
+        signIn (provider) {
             // Sign in the user and fetch the user data
             this.get('session').open('firebase', {provider, email, password}).then(() => {
                 console.log('Login ok');
             });
         },
-        signOut: function () {
+        signOut () {
             this.get('session').close();
         },
         addNewMovie () {

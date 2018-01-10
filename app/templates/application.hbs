@@ -3,21 +3,14 @@
     <h1>Leffat</h1>
 
     {{#if session.isAuthenticated}}
-        <button {{action 'signOut'}} class="log-out">Kirjaudu ulos</button>
+        <button {{action 'signOut'}} class="signOut">Kirjaudu ulos</button>
     {{else}}
-        <form class="login-form" {{action 'signIn' 'password' on='submit'}}>
-
-            <h3>Kirjautuminen</h3>
-
-            <label>Sähköposti: {{input type='email' value=email}}</label>
-            <label>Salasana: {{input type='password' value=password}}</label>
-            <input type="submit" value="Kirjaudu">
-        </form>
+        <button {{action 'signIn' 'google'}} class="signIn">Kirjaudu</button>
     {{/if}}
 </header>
 
 {{#if session.isAuthenticated}}
-    <p class="add-new-movie">Lisää uusi leffa <button {{action 'addNewMovie'}} class="log-out">lisää</button></p>
+    <p class="add-new-movie">Lisää uusi leffa <button {{action 'addNewMovie'}}>lisää</button></p>
 {{/if}}
 
 <ul class="new-movie-list movie-list">

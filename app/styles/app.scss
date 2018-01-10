@@ -34,11 +34,12 @@ h1, h2, h3, h4 {
     float: left;
     padding: 20px;
   }
+}
 
-  .log-out {
-    float: right;
-    margin: 10px 15px;
-  }
+.signIn,
+.signOut {
+  float: right;
+  margin: 10px 15px;
 }
 
 .add-new-movie {
