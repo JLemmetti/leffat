@@ -15,6 +15,7 @@
 
     <div class="calendar">
         {{pikaday-inputless
+            options=(hash keyboardInput=false)
             value=movie.watchDate
             onSelection=(action (mut movie.watchDate))
         }}
