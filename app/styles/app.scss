@@ -1,4 +1,6 @@
 
+@import 'theme';
+
 * {
   box-sizing: border-box;
 }
@@ -17,7 +19,7 @@
 }
 
 body {
-  background-color: #eee;
+  background-color: $theme-color-b;
   font-family: 'Verdana';
   margin: 0;
 }
@@ -28,10 +30,11 @@ h1, h2, h3, h4 {
 }
 
 .main-header {
-  background-color: #ddd;
+  background-color: $theme-color-a;
 
   h1 {
     float: left;
+    color: $theme-text-color-a;
     padding: 20px;
   }
 }
@@ -43,6 +46,7 @@ h1, h2, h3, h4 {
 }
 
 .add-new-movie {
+  color: $theme-text-color-b;
   width: 80%;
   font-size: 20px;
   margin: 40px auto;
@@ -56,9 +60,16 @@ h1, h2, h3, h4 {
 }
 
 .basic-container {
-  background-color: #ddd;
+  background-color: $theme-color-c;
   border: 1px solid rgba(0, 0, 0, .2);
   border-radius: 3px;
+
+  h2,
+  p,
+  a,
+  label {
+    color: $theme-text-color-c;
+  }
 }
 
 .movie-item {
@@ -82,7 +93,6 @@ h1, h2, h3, h4 {
     font-size: 28px;
 
     a {
-      color: #444;
       text-decoration: none;
 
       &:hover {
@@ -120,7 +130,7 @@ h1, h2, h3, h4 {
 
   h2 {
     width: 100%;
-    margin: 5px 10px;
+    margin: 5px 10px 15px;
   }
 
   label,
@@ -146,13 +156,13 @@ h1, h2, h3, h4 {
   }
 }
 
-
 .calendar {
   float: left;
 
   .pika-single {
     width: 258px;
     margin: 40px auto 0;
+    border-radius: 4px;
   }
 
   .is-today {
@@ -163,27 +173,24 @@ h1, h2, h3, h4 {
 
   .is-selected {
     .pika-button {
-      background-color: #333;
+      background-color: $button-color;
       color: #eee;
       box-shadow: inset 0 1px 3px rgba(255, 255, 255, .5);
     }
   }
 
   .pika-button:hover {
-      background: #666;
+      background: #bbb;
       color: #eee;
       box-shadow: inset 0 1px 3px rgba(255, 255, 255, .5);
   }
 }
 
-
-
-
-
 input[type='email'],
 input[type='text'],
 input[type='password'],
 textarea {
+  background-color: $form-input-bg-color;
   font-size: 16px;
   padding: 4px;
   border: 2px solid rgba(0, 0, 0, .3);
@@ -192,15 +199,15 @@ textarea {
 
 button,
 input[type='submit'] {
-  background-color: #333;
-  color: #eee;
+  background-color: $button-color;
+  color: $button-text-color;
   font-size: 15px;
   padding: 5px 10px;
-  border: 2px solid rgba(255, 255, 255, .3);
-  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, .3);
+  border-radius: 4px;
 
   &.delete {
     background-color: #bf2c2c;
-    color: #eee;
+    color: $button-text-color;
   }
 }
