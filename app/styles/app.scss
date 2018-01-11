@@ -65,6 +65,19 @@ h1, h2, h3, h4 {
   padding: 10px 15px;
   margin: 15px 0;
 
+  .actions {
+    float: right;
+    width: 20%;
+
+    button,
+    input[type='submit'] {
+      float: right;
+      display: block;
+      width: 50%;
+      margin: 10px 0 0 10px;
+    }
+  }
+
   h2 {
     font-size: 28px;
 
@@ -86,6 +99,24 @@ h1, h2, h3, h4 {
 .edit-movie-item {
   padding: 20px;
 
+  .info,
+  .calendar {
+    float: left;
+    width: 35%;
+  }
+
+  .actions {
+    float: right;
+    width: 20%;
+
+    button,
+    input[type='submit'] {
+      float: right;
+      display: block;
+      width: 50%;
+      margin: 10px 0 0 10px;
+    }
+  }
 
   h2 {
     width: 100%;
@@ -116,13 +147,6 @@ h1, h2, h3, h4 {
 }
 
 
-.info,
-.calendar,
-.actions {
-  float: left;
-  width: 35%;
-}
-
 .calendar {
   float: left;
 
@@ -140,6 +164,7 @@ h1, h2, h3, h4 {
   .is-selected {
     .pika-button {
       background-color: #333;
+      color: #eee;
       box-shadow: inset 0 1px 3px rgba(255, 255, 255, .5);
     }
   }
@@ -153,18 +178,7 @@ h1, h2, h3, h4 {
 
 
 
-.actions {
-  float: right;
-  width: 20%;
 
-  button,
-  input[type='submit'] {
-    float: right;
-    display: block;
-    width: 50%;
-    margin: 10px 0 0 10px;
-  }
-}
 
 input[type='email'],
 input[type='text'],
