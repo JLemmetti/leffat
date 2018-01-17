@@ -1,0 +1,47 @@
+
+{{#if session.isAuthenticated}}
+    <p class="add-new-movie">Lisää uusi leffa <button {{action 'addNewMovie'}}>Lisää</button></p>
+{{/if}}
+
+<ul class="new-movie-list movie-list">
+    {{#each newMovies as |movie|}}
+    <li>
+        {{edit-movie-item
+            movie=movie
+            title=movie.title
+            link=movie.link
+            notes=movie.notes
+            watchDate=movie.watchDate
+            setWatchDate='setWatchDate'
+            saveMovie='saveMovie'
+            cancelEdit='cancelEdit'
+        }}
+    </li>
+    {{/each}}
+</ul>
+
+<ul class="movie-list">
+    {{#each sortedMovies as |movie|}}
+    <li class="movie-item basic-container clearfix">
+        {{#if movie.editing}}
+            {{edit-movie-item
+                movie=movie
+                title=movie.title
+                link=movie.link
+                notes=movie.notes
+                watchDate=movie.watchDate
+                setWatchDate='setWatchDate'
+                saveMovie='saveMovie'
+                cancelEdit='cancelEdit'
+                deleteMovie='deleteMovie'
+            }}
+        {{else}}
+            {{movie-item
+                session=session
+                movie=movie
+                editMovie='editMovie'
+            }}
+        {{/if}}
+    </li>
+    {{/each}}
+</ul>

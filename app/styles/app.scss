@@ -32,15 +32,34 @@ h1, h2, h3, h4 {
 .main-header {
   background-color: $theme-color-a;
 
-  h1 {
+  .logo {
     float: left;
     color: $theme-text-color-a;
+    text-decoration: none;
     padding: 20px;
   }
 }
 
-.signIn,
-.signOut {
+.main-nav {
+  clear: both;
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 20px;
+
+    li {
+      display: inline-block;
+
+      a {
+        color: $theme-text-color-a;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.sign-in,
+.sign-out {
   float: right;
   margin: 10px 15px;
 }
