@@ -3097,7 +3097,7 @@ ember-cli-babel@^5.1.7:
     ember-cli-version-checker "^1.0.2"
     resolve "^1.1.2"
 
-ember-cli-babel@^6.0.0-beta.4, ember-cli-babel@^6.0.0-beta.7, ember-cli-babel@^6.12.0, ember-cli-babel@^6.16.0, ember-cli-babel@^6.3.0, ember-cli-babel@^6.7.2, ember-cli-babel@^6.8.1, ember-cli-babel@^6.8.2:
+ember-cli-babel@^6.0.0-beta.4, ember-cli-babel@^6.0.0-beta.7, ember-cli-babel@^6.12.0, ember-cli-babel@^6.16.0, ember-cli-babel@^6.3.0, ember-cli-babel@^6.7.2, ember-cli-babel@^6.8.1, ember-cli-babel@^6.8.2, ember-cli-babel@^6.9.2:
   version "6.18.0"
   resolved "https://registry.yarnpkg.com/ember-cli-babel/-/ember-cli-babel-6.18.0.tgz#3f6435fd275172edeff2b634ee7b29ce74318957"
   dependencies:
@@ -3582,6 +3582,13 @@ ember-qunit@^3.4.1:
     ember-cli-babel "^6.8.2"
     ember-cli-test-loader "^2.2.0"
     qunit "~2.6.0"
+
+ember-radio-button@^1.2.4:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/ember-radio-button/-/ember-radio-button-1.2.4.tgz#7ca1ac03f79036954dbeeb2926350965ee4db497"
+  dependencies:
+    ember-cli-babel "^6.9.2"
+    ember-cli-htmlbars "^1.1.1"
 
 ember-resolver@^5.0.1:
   version "5.0.1"
@@ -7284,13 +7291,13 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
 
-silent-error@^1.0.0, silent-error@^1.0.1, silent-error@^1.1.1:
+silent-error@^1.0.0, silent-error@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/silent-error/-/silent-error-1.1.1.tgz#f72af5b0d73682a2ba1778b7e32cd8aa7c2d8662"
   dependencies:
     debug "^2.2.0"
 
-silent-error@^1.1.0:
+silent-error@^1.0.1, silent-error@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/silent-error/-/silent-error-1.1.0.tgz#2209706f1c850a9f1d10d0d840918b46f26e1bc9"
   dependencies:

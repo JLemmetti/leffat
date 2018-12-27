@@ -11,9 +11,33 @@
     <label>Linkki{{input type="text" value=link}}</label>
       <label>Arvostelu
         <div  class="rating clearfix">
-          <label><input type="radio" onclick={{action 'setRating' movie 'good'}}>Hyvä</label>
-          <label><input type="radio" onclick={{action 'setRating' movie 'meh'}}>Meh</label>
-          <label><input type="radio" onclick={{action 'setRating' movie 'bad'}}>Huono</label>
+          <label>Hyvä
+            {{radio-button
+              value='good'
+              groupValue=movie.rating
+              changed=(action 'setRating' movie 'good')
+            }}
+          </label>
+          
+          <label>Meh
+            {{radio-button
+              value='meh'
+              groupValue=movie.rating
+              changed=(action 'setRating' movie 'meh')
+            }}
+          </label>
+          
+            
+          <label>Huono
+            {{radio-button
+              value='bad'
+              groupValue=movie.rating
+              changed=(action 'setRating' movie 'bad')
+            }}
+          </label>
+
+
+
         </div>
       </label>
     <label>Huomiot{{textarea value=notes rows='5'}}</label>
