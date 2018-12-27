@@ -12,13 +12,13 @@ export default DS.Model.extend({
   readableRating: computed('rating', function() {
     switch (this.rating) {
       case 'good':
-        return 'Hyvä';
+        return 'Hyvä 👍';
       break;
       case 'meh':
-        return 'Meh';
+        return 'Meh 😒';
       break;
       case 'bad':
-        return 'Huono';
+        return 'Huono 👎';
       break;
       default:
         return '-';
