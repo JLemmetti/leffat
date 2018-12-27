@@ -1,12 +1,13 @@
+import { filterBy, sort } from '@ember/object/computed';
 import Controller from '@ember/controller';
 import EmberObject, { computed } from '@ember/object';
 
 export default Controller.extend({
-    movies: computed.filterBy('model.movies', 'isNew', false),
-    newMovies: computed.filterBy('model.movies', 'isNew', true),
+    movies: filterBy('model.movies', 'isNew', false),
+    newMovies: filterBy('model.movies', 'isNew', true),
 
     sortProperties: ['watchDate:desc'],
-    sortedMovies: computed.sort('movies', 'sortProperties'),
+    sortedMovies: sort('movies', 'sortProperties'),
 
     actions: {
         addNewMovie () {
