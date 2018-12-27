@@ -5,11 +5,13 @@
     {{#if movie.rating}}
         <p>Arvostelu: {{movie.readableRating}}</p>
     {{/if}}
-    <pre>{{movie.notes}}</pre>
+    {{#if movie.notes}}
+        <pre>{{movie.notes}}</pre>
+    {{/if}}
 </div>
 
 {{#if session.isAuthenticated}}
-<div class="actions">
-    <button {{action 'editMovie' movie}}>Muokkaa</button>
-</div>
+    <div class="actions">
+        <button {{action 'editMovie' movie}}>Muokkaa</button>
+    </div>
 {{/if}}
