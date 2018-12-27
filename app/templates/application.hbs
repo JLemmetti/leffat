@@ -1,19 +1,18 @@
-
 <header class="main-header clearfix">
 
-    <h1>{{#link-to 'index' class='logo'}}Leffat{{/link-to}}</h1>
+  <h1>{{#link-to 'index' class='logo'}}Leffat{{/link-to}}</h1>
 
-    <nav class="main-nav">
-        <ul>
-            <li>{{#link-to 'users'}}Käyttäjät{{/link-to}}</li>
-        </ul>
-    </nav>
+  <nav class="main-nav">
+    <ul>
+      <li>{{#link-to 'users'}}Käyttäjät{{/link-to}}</li>
+    </ul>
+  </nav>
 
-    {{#if session.isAuthenticated}}
-        <button {{action 'signOut'}} class="sign-out">Kirjaudu ulos</button>
-    {{else}}
-        <button {{action 'signIn' 'google'}} class="sign-in">Kirjaudu</button>
-    {{/if}}
+  {{#if session.isAuthenticated}}
+    <button {{action 'signOut'}} class="sign-out">Kirjaudu ulos</button>
+  {{else}}
+    <button {{action 'signIn' 'google'}} class="sign-in">Kirjaudu</button>
+  {{/if}}
 
 </header>
 

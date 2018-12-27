@@ -1,32 +1,31 @@
-
 <form {{action 'saveMovie' movie on='submit'}} class="edit-movie-item basic-container clearfix">
 
-    {{#if movie.isNew}}
-        <h2>Lisää uusi leffa</h2>
-    {{else}}
-        <h2>Muokkaa leffaa</h2>
-    {{/if}}
+  {{#if movie.isNew}}
+    <h2>Lisää uusi leffa</h2>
+  {{else}}
+    <h2>Muokkaa leffaa</h2>
+  {{/if}}
 
-    <div class="info">
-        <label>Leffa{{input type="text" value=title}}</label>
-        <label>Linkki{{input type="text" value=link}}</label>
-        <label>Huomiot{{textarea value=notes rows='5'}}</label>
-    </div>
+  <div class="info">
+    <label>Leffa{{input type="text" value=title}}</label>
+    <label>Linkki{{input type="text" value=link}}</label>
+    <label>Huomiot{{textarea value=notes rows='5'}}</label>
+  </div>
 
-    <div class="calendar">
-        {{pikaday-inputless
-            options=(hash keyboardInput=false)
-            value=movie.watchDate
-            onSelection=(action (mut movie.watchDate))
-        }}
-    </div>
+  <div class="calendar">
+    {{pikaday-inputless
+      options=(hash keyboardInput=false)
+      value=movie.watchDate
+      onSelection=(action (mut movie.watchDate))
+    }}
+  </div>
 
-    <div class="actions">
-        <input type="submit" value="Tallenna">
-        {{#unless movie.isNew}}
-            <button {{action 'deleteMovie' movie}} class="delete">Poista</button>
-        {{/unless}}
-        <button {{action 'cancelEdit' movie}}>Peruuta</button>
-    </div>
+  <div class="actions">
+    <input type="submit" value="Tallenna">
+    {{#unless movie.isNew}}
+      <button {{action 'deleteMovie' movie}} class="delete">Poista</button>
+    {{/unless}}
+    <button {{action 'cancelEdit' movie}}>Peruuta</button>
+  </div>
 
 </form>
