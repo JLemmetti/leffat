@@ -1,7 +1,11 @@
+<div class="total-count">
+    Yhteensä: {{sortedMovies.length}}
+</div>
 
 {{#if session.isAuthenticated}}
     <p class="add-new-movie">Lisää uusi leffa <button {{action 'addNewMovie'}}>Lisää</button></p>
 {{/if}}
+
 
 <ul class="new-movie-list movie-list">
     {{#each newMovies as |movie|}}

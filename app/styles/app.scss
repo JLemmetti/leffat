@@ -64,6 +64,15 @@ h1, h2, h3, h4 {
   margin: 10px 15px;
 }
 
+.total-count {
+  float: right;
+  background-color: $theme-color-c;
+  color: #eee;
+  font-size: 1.2em;
+  padding: 10px 25px;
+  border-radius: 5px 0px 0px 5px;
+}
+
 .add-new-movie {
   color: $theme-text-color-b;
   width: 80%;
