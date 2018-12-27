@@ -2,6 +2,9 @@
 <div class="info">
     <h2><a href="{{movie.link}}" target="_blank">{{movie.title}}</a></h2>
     <p>Nähty: {{moment-format movie.watchDate 'D.M.YYYY'}}</p>
+    {{#if movie.rating}}
+        <p>Arvostelu: {{movie.readableRating}}</p>
+    {{/if}}
     <pre>{{movie.notes}}</pre>
 </div>
 

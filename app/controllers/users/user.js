@@ -15,6 +15,9 @@ export default Controller.extend({
         user.get('movies').pushObject(movie);
       });
     },
+    setRating(movie, rating) {
+      movie.set('rating', rating);
+    },
     saveMovie(movie) {
       movie.set('editing', false);
 

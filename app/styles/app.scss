@@ -143,10 +143,11 @@ h1, h2, h3, h4 {
     width: 35%;
   }
 
+  
   .actions {
     float: right;
     width: 20%;
-
+    
     button,
     input[type='submit'] {
       float: right;
@@ -154,25 +155,26 @@ h1, h2, h3, h4 {
       width: 50%;
       margin: 10px 0 0 10px;
     }
+    
   }
-
+  
   h2 {
     width: 100%;
     margin: 5px 10px 15px;
   }
-
+  
   label,
   p {
     font-size: 18px;
     margin: 5px 0 5px;
   }
-
+  
   label {
     float: left;
     clear: left;
     width: 100%;
     padding: 0 2.5%;
-
+    
     input,
     textarea {
       display: block;
@@ -181,12 +183,27 @@ h1, h2, h3, h4 {
       min-width: 95%;
       margin: 3px 0 0;
     }
+    
+  }
+  .rating {
+    
+    label {
+      clear: none;
+      width: 33%;
+
+      input[type='radio'] {
+        float: left;
+        padding: 0 5px;
+        margin: 4px 8px 0 0;
+      }
+    }
+
   }
 }
 
 .calendar {
   float: left;
-
+  
   .pika-single {
     width: 258px;
     margin: 40px auto 0;

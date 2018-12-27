@@ -9,6 +9,13 @@
   <div class="info">
     <label>Leffa{{input type="text" value=title}}</label>
     <label>Linkki{{input type="text" value=link}}</label>
+      <label>Arvostelu
+        <div  class="rating clearfix">
+          <label><input type="radio" onclick={{action 'setRating' movie 'good'}}>Hyvä</label>
+          <label><input type="radio" onclick={{action 'setRating' movie 'meh'}}>Meh</label>
+          <label><input type="radio" onclick={{action 'setRating' movie 'bad'}}>Huono</label>
+        </div>
+      </label>
     <label>Huomiot{{textarea value=notes rows='5'}}</label>
   </div>
 
@@ -27,5 +34,6 @@
     {{/unless}}
     <button {{action 'cancelEdit' movie}}>Peruuta</button>
   </div>
+
 
 </form>
