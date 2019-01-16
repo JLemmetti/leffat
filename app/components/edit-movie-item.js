@@ -1,6 +1,7 @@
 import Component from '@ember/component';
 
 export default Component.extend({
+  tagName: '',
   actions: {
     setRating(movie, rating) {
       this.sendAction('setRating', movie, rating);
