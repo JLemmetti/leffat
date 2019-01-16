@@ -10,17 +10,12 @@
 <ul class="new-movie-list movie-list">
     {{#each newMovies as |movie|}}
     <li>
-        {{edit-movie-item
-            movie=movie
-            title=movie.title
-            link=movie.link
-            rating=movie.rating
-            notes=movie.notes
-            watchDate=movie.watchDate
-            setRating='setRating'
-            saveMovie='saveMovie'
-            cancelEdit='cancelEdit'
-        }}
+        <EditMovieItem
+            @movie={{movie}}
+            @setRating='setRating'
+            @saveMovie='saveMovie'
+            @cancelEdit='cancelEdit'
+        />
     </li>
     {{/each}}
 </ul>
@@ -29,24 +24,19 @@
     {{#each sortedMovies as |movie|}}
     <li class="movie-item basic-container clearfix">
         {{#if movie.editing}}
-            {{edit-movie-item
-                movie=movie
-                title=movie.title
-                link=movie.link
-                rating=movie.rating
-                notes=movie.notes
-                watchDate=movie.watchDate
-                setRating='setRating'
-                saveMovie='saveMovie'
-                cancelEdit='cancelEdit'
-                deleteMovie='deleteMovie'
-            }}
+            <EditMovieItem
+                @movie={{movie}}
+                @setRating='setRating'
+                @saveMovie='saveMovie'
+                @cancelEdit='cancelEdit'
+                @deleteMovie='deleteMovie'
+            />
         {{else}}
-            {{movie-item
-                session=session
-                movie=movie
-                editMovie='editMovie'
-            }}
+            <MovieItem
+                @session={{session}}
+                @movie={{movie}}
+                @editMovie='editMovie'
+            />
         {{/if}}
     </li>
     {{/each}}
